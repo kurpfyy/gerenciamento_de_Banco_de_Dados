@@ -1,0 +1,25 @@
+show tables;
+
+show databases;
+
+select * from ( escolha a table)
+
+create database escola;
+
+use escola;
+
+create table Aluno ( matricula int primary key auto_increment, nome varchar(80) not null, nascimento date, cpf char(14) not null unique, responsavel varchar(80) not null, email varchar(80) unique );
+
+create table estuda ( idEstuda int primary key auto_increment, fk_Aluno_matricula int not null, fk_Turma_numero int not null );
+
+insert into (table) values (em ordem do que tem na tabela)
+
+alter table estuda add constraint fkmat foreign key (fk_Aluno_matricula) references Aluno (matricula);
+
+alter table estuda add constraint fknum foreign key (fk_Turma_numero) references Turma (numero);
+
+create table Possui ( idPossui int primary key auto_increment, fk_Disciplina_cod_disciplina int not null, fk_Turma_numero int not null);
+
+alter table veiculo rename to carro
+
+alter table Veiculo change modelo nome_modelo varchar(50)

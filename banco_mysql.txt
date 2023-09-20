@@ -1,4 +1,4 @@
-show tables;
+ show tables;
 
 show databases;
 
@@ -23,3 +23,39 @@ create table Possui ( idPossui int primary key auto_increment, fk_Disciplina_cod
 alter table veiculo rename to carro
 
 alter table Veiculo change modelo nome_modelo varchar(50)
+
+insert into aluno ( matricula, nome, nascimento, cpf, responsavel, email ) values ( '3004', 'Ana Pereira', '2007-04-12', '532.275.612-39', 'Merlinda Pereira','AnaP@gmail.com');
+
+ALTER TABLE estuda DROP FOREIGN KEY fkmat2;
+
+insert into estuda values ( 7501, 3001, 2023090 );
+
+update carros set modelo_nome = 'Polo', placa='ABC1257' where idVeiculo = 101;
+
+update carros set modelo_nome = 'VK' where idVeiculo = 101;
+
+insert into carros values ( null, 'Ford', 'KW', 'ABC1236');
+
+select * from carros where fabricante = 'FIAT';
+
+insert into disciplina values ( 1004, 'Lógica de Programação');
+
+insert into professor values ( 1004, 'Tecnico de Informatica', 'Jefferson Brandão');
+
+alter table possui add constraint fkdic foreign key (fk_Turma_numero) references Turma (numero);
+
+alter table leciona add constraint fkprof foreign key (fk_Disciplina_cod_disciplina) references disciplina (disciplina);
+
+update professor set nome = 'Vicente Orsino' where matricula = 1002;
+
+update aluno set nascimento = '2008-03-15' where matricula = 3001;
+
+update aluno set nascimento = '2008-08-01' where matricula = 3001;
+
+update professor set email = 'Sergggi@email.com' where matricula = 1001;
+
+insert into turma values (20223100, 'M', 'Tecnico de Comunicação Visual');
+
+insert into turma values (20233040, 'T', 'Tecnico de Informatica');
+
+insert into estuda values (null, 3007, 20223100);

@@ -59,3 +59,27 @@ insert into turma values (20223100, 'M', 'Tecnico de Comunicação Visual');
 insert into turma values (20233040, 'T', 'Tecnico de Informatica');
 
 insert into estuda values (null, 3007, 20223100);
+
+select matricula, nome , responsavel from aluno order by responsavel desc;
+
+select matricula, nome , responsavel from aluno order by responsavel;
+
+select * from aluno where matricula in ( 3003, 3006, 3007);
+
+insert into aluno values ( null,'Renata Mouse', '1995-03-15', '123.456.789-09', 'Wesley Keyboard', 'rm@email.com');
+
+select matricula, nome, nascimento, month(nascimento) from aluno;
+
+select * from aluno where nome like 'G%' ;
+
+select concat ('Nome: ', nome, ' - Email:', email) from aluno where email is not null;
+
+select concat ('Nome do Aluno: ', nome) from aluno;
+
+select nome, lower(email) from aluno;
+
+select aluno.nome, turma.definicao, turma.turno from aluno, turma, estuda where aluno.matricula = estuda.fk_aluno_matricula and fk_turma_numero = turma.numero and aluno.matricula = 3001;
+
+select aluno.nome, turma.definicao, turma.turno from aluno, turma, estuda where aluno.matricula = estuda.fk_aluno_matricula and fk_turma_numero = turma.numero order by aluno.nome;
+
+select aluno.nome, disciplina.nome from aluno, estuda, turma, disciplina where aluno.matricula = estuda.fk_aluno_matricula and estuda.fk_Turma_numero = possui.fk_Turma_numero and disciplina.fk_Disciplina_cod_disciplina  = disciplina.disciplina;

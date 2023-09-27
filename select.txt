@@ -1,0 +1,22 @@
+1-select nome, email from aluno where email is not null;
+
+2-select nome from professor where formacao = 'Tecnico de Informatica' order by nome;
+
+3-select * from aluno where matricula >= 3004 and matricula <= 3008;
+
+4-select numero from turma where definicao = 'Tecnico de Informatica';
+
+5-select disciplina.nome from turma, possui, disciplina where turma.numero = possui.fk_turma_numero and possui.fk_disciplina_cod_disciplina = disciplina.disciplina and turma.definicao = 'Tecnico de Informatica';
+
+6-select nome as 'Aluno:' , email as 'E-mail:' from aluno where email is not null;
+
+7-select * from aluno where year(nascimento) = 2000;
+  select * from aluno where nascimento like '2000%';
+
+8-select nome, nascimento from aluno where month(nascimento) = 9;
+
+9-select aluno.nome, aluno.cpf from aluno, estuda, turma where aluno.matricula = estuda.fk_aluno_matricula and estuda.fk_Turma_numero = Turma.numero and turma.turno = 'M';
+
+10-select disciplina.* from turma, possui, disciplina where turma.numero = possui.fk_Turma_numero and possui.fk_Disciplina_cod_disciplina and turma.turno = 'T';
+
+11-select professor.nome from turma, possui, disciplina, leciona, professor where turma.numero = possui.fk_turma_numero and possui.fk_turma_numero and possui.fk_disciplina_cod_disciplina = disciplina.disciplina and disciplina.disciplina = leciona.fk_disciplina_cod_disciplina and leciona.fk_professor_matricula = professor.matricula and professor.nome = 'Vicente Orsino';
